@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Me | James Nay — Writing Portfolio</title>
+  <meta name="description" content="Writing 111 digital portfolio of James Nay, Wake Forest University.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body style="--spine:#56654f">
+  <div class="lamp"></div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">J. Nay</a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" aria-current="page">About</a></li>
+          <li><a href="research-essay.html">Research</a></li>
+          <li><a href="rhetorical-analysis.html">Rhetoric</a></li>
+          <li><a href="literacy-narrative.html">Narrative</a></li>
+          <li><a href="reflection.html">Reflection</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-wrap"><article class="page">
+      <p class="eyebrow">Volume I</p>
+      <h1>About the Author</h1>
+      <p class="lede">Writer and student at Wake Forest University.</p>
+      <div class="about-grid">
+        <img class="photo" src="assets/headshot.png" alt="Photo of James Nay">
+        <div>
+          <p style="margin-top:0">Hi, I'm James. I'm from Bronxville, New York. I'm currently a freshman at Wake Forest University as an intended finance major. I love to go fishing, play golf, watch football and hang out with friends.</p>
+          <p>My favorite composition we did in this class was the research essay. I really enjoyed going deeper into the topic and found that I learned a lot more about NIL.</p>
+        </div>
+      </div>
+
+      <div class="pager">
+        <a href="index.html"><small>← Back to</small><b>The Shelf</b></a>
+        <a class="next" href="research-essay.html"><small>Next →</small><b>Research Essay</b></a>
+      </div>
+    </article></div>
+  </main>
+
+  <footer>&copy; 2026 James Nay · Writing 111 · Wake Forest University</footer>
+
+  <script>
+    const t = document.querySelector('.menu-toggle'), n = document.getElementById('site-nav');
+    t.addEventListener('click', () => { const o = n.classList.toggle('open'); t.setAttribute('aria-expanded', o); });
+  </script>
+</body>
+</html>

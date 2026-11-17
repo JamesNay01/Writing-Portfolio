@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home | James Nay — Writing Portfolio</title>
+  <meta name="description" content="Writing 111 digital portfolio of James Nay, Wake Forest University.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="lamp"></div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">J. Nay</a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="research-essay.html">Research</a></li>
+          <li><a href="rhetorical-analysis.html">Rhetoric</a></li>
+          <li><a href="literacy-narrative.html">Narrative</a></li>
+          <li><a href="reflection.html">Reflection</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="home-head">
+      <div class="sm">Writing 111 · Fall 2026</div>
+      <h1>James Nay, <em>in Writing</em></h1>
+      <p>A portfolio of my work at Wake Forest University</p>
+    </section>
+    <section class="shelf">
+      <div class="books">
+        <a class="book b1" href="about.html"><span class="no">I</span><span class="ti">About the Author</span><span class="au">J. Nay</span></a>
+        <a class="book b2" href="research-essay.html"><span class="ribbon"></span><span class="no">II</span><span class="ti">The Research Essay</span><span class="au">J. Nay</span></a>
+        <a class="book b3" href="rhetorical-analysis.html"><span class="no">III</span><span class="ti">Rhetorical Analysis</span><span class="au">J. Nay</span></a>
+        <a class="book b4" href="literacy-narrative.html"><span class="no">IV</span><span class="ti">Literacy Narrative</span><span class="au">J. Nay</span></a>
+        <a class="book b5 lean" href="reflection.html"><span class="no">V</span><span class="ti">Critical Reflection</span><span class="au">J. Nay</span></a>
+        <a class="framed" href="about.html"><img src="assets/headshot.png" alt="Photo of James Nay"><span>the author</span></a>
+      </div>
+      <div class="board"></div>
+    </section>
+  </main>
+
+  <footer>&copy; 2026 James Nay · Writing 111 · Wake Forest University</footer>
+
+  <script>
+    const t = document.querySelector('.menu-toggle'), n = document.getElementById('site-nav');
+    t.addEventListener('click', () => { const o = n.classList.toggle('open'); t.setAttribute('aria-expanded', o); });
+  </script>
+</body>
+</html>

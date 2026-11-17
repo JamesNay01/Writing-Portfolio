@@ -1,0 +1,164 @@
+/* Writing Portfolio — James Nay · "Bookshelf" theme */
+:root {
+  --cream: #f2e8d5;
+  --muted: #bfae8f;
+  --gold: #e8c27a;
+  --gold-dim: #c9a35c;
+  --paper: #fbf6ea;
+  --ink: #2a2118;
+  --ink-muted: #6d5f4b;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; background: #0f0a06; overflow-x: hidden; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Inter", system-ui, sans-serif;
+  color: var(--cream);
+  background: #0f0a06 radial-gradient(ellipse 120% 900px at 50% 0%, #3a2a1c 0%, #1a120b 60%, #0f0a06 100%) no-repeat;
+  position: relative;
+  overflow-x: hidden;
+}
+.lamp {
+  position: absolute; left: 0; right: 0; top: 0; height: 600px;
+  background: radial-gradient(ellipse 450px 390px at 50% 0%, rgba(255,206,120,.22), transparent 100%);
+  pointer-events: none;
+}
+
+/* ---------- Header / nav ---------- */
+.site-header { position: relative; z-index: 5; }
+.header-inner {
+  max-width: 1280px; margin: 0 auto;
+  padding: 24px 48px;
+  display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap;
+}
+.brand { font-family: "DM Serif Display", Georgia, serif; font-size: 1.4rem; color: var(--cream); text-decoration: none; }
+nav ul { list-style: none; display: flex; gap: 24px; margin: 0; padding: 0; flex-wrap: wrap; }
+nav a { color: #d9c9a8; text-decoration: none; font-size: .88rem; padding-bottom: 3px; border-bottom: 1px solid transparent; }
+nav a:hover { color: #fff; }
+nav a[aria-current="page"] { color: var(--gold); border-bottom-color: var(--gold); }
+.menu-toggle {
+  display: none; background: none; border: 1px solid #6a5539; color: var(--cream);
+  font: 500 .85rem "Inter", sans-serif; padding: 6px 12px; border-radius: 4px; cursor: pointer;
+}
+
+/* ---------- Home: hero + shelf ---------- */
+.home-head { text-align: center; padding: 30px 20px 10px; position: relative; z-index: 2; }
+.sm { letter-spacing: .3em; text-transform: uppercase; font-size: .72rem; color: var(--gold-dim); }
+.home-head h1 {
+  font-family: "DM Serif Display", Georgia, serif; font-weight: 400;
+  font-size: clamp(3rem, 8vw, 6rem); margin: 10px 0 6px; line-height: 1;
+}
+.home-head h1 em { color: var(--gold); }
+.home-head p { color: var(--muted); margin: 0; font-size: 1.05rem; }
+
+.shelf { max-width: 980px; margin: 50px auto 80px; padding: 0 30px; position: relative; z-index: 2; }
+.books { display: flex; align-items: flex-end; justify-content: center; gap: 10px; height: 400px; padding: 0 20px; }
+.book {
+  position: relative; width: 86px; border-radius: 4px 6px 6px 4px;
+  text-decoration: none; color: #fff;
+  display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+  padding: 18px 0;
+  transition: transform .35s cubic-bezier(.2,.8,.2,1);
+  box-shadow: inset 6px 0 10px rgba(0,0,0,.35), inset -2px 0 4px rgba(255,255,255,.12), 0 10px 20px rgba(0,0,0,.5);
+  flex-shrink: 0;
+}
+.book::before, .book::after { content: ""; position: absolute; left: 0; right: 0; height: 3px; background: rgba(255,215,140,.75); }
+.book::before { top: 38px; }
+.book::after { bottom: 52px; }
+.book:hover, .book:focus-visible { transform: translateY(-34px) rotate(-2deg); outline: none; }
+.book .ti {
+  writing-mode: vertical-rl; transform: rotate(180deg);
+  font-family: "DM Serif Display", Georgia, serif; font-size: 1.45rem; letter-spacing: .02em; white-space: nowrap;
+}
+.book .no { font-size: .7rem; letter-spacing: .2em; color: rgba(255,230,180,.9); }
+.book .au { font-size: .6rem; letter-spacing: .2em; text-transform: uppercase; opacity: .75; }
+.b1 { height: 300px; background: linear-gradient(90deg, #3e4a3a, #56654f); }
+.b2 { height: 380px; width: 104px; background: linear-gradient(90deg, #6b1d1a, #8f2a25); }
+.b3 { height: 330px; background: linear-gradient(90deg, #1d2d4a, #2e4470); }
+.b4 { height: 290px; width: 78px; background: linear-gradient(90deg, #5a4520, #7d6230); }
+.b5 { height: 350px; background: linear-gradient(90deg, #2a2a2a, #444); }
+.lean { transform: rotate(7deg); transform-origin: bottom left; margin-left: 14px; }
+.lean:hover, .lean:focus-visible { transform: rotate(7deg) translateY(-34px); }
+.ribbon {
+  position: absolute; top: -2px; right: 14px; width: 16px; height: 46px; background: var(--gold);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 78%, 0 100%);
+}
+.framed {
+  width: 150px; height: 190px; align-self: flex-end; margin-left: 30px; flex-shrink: 0;
+  background: #e9dcc0; padding: 10px 10px 30px; transform: rotate(-3deg);
+  box-shadow: 0 10px 20px rgba(0,0,0,.5); text-decoration: none;
+}
+.framed img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.framed span { display: block; text-align: center; color: #3a2a1c; font-family: "DM Serif Display", serif; font-style: italic; font-size: .9rem; margin-top: 4px; }
+.board { height: 26px; background: linear-gradient(#7a5532, #4e331b); border-radius: 3px; box-shadow: 0 18px 30px rgba(0,0,0,.6); }
+
+/* ---------- Interior pages: a cream "page" on the dark desk ---------- */
+.page-wrap { max-width: 860px; margin: 20px auto 80px; padding: 0 24px; position: relative; z-index: 2; }
+.page {
+  background: var(--paper); color: var(--ink);
+  border-radius: 4px; padding: 64px 72px 72px;
+  box-shadow: 0 30px 60px rgba(0,0,0,.55), inset 0 0 80px rgba(160,120,60,.08);
+  font-family: "Source Serif 4", Georgia, serif; font-size: 18px; line-height: 1.75;
+  position: relative;
+}
+.page::before {               /* bookmark ribbon */
+  content: ""; position: absolute; top: -6px; right: 56px; width: 22px; height: 64px;
+  background: var(--spine, #8f2a25);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+}
+.eyebrow { font-family: "Inter", sans-serif; font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; color: #9e7e38; margin: 0 0 10px; }
+.page h1 { font-family: "DM Serif Display", Georgia, serif; font-weight: 400; font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: 1.08; margin: 0 0 12px; }
+.page h2 { font-family: "DM Serif Display", Georgia, serif; font-weight: 400; font-size: 1.6rem; margin: 2em 0 .4em; }
+.lede { color: var(--ink-muted); font-size: 1.12rem; font-style: italic; margin: 0 0 30px; }
+.page a { color: #8f2a25; }
+.meta {
+  font-family: "Inter", sans-serif; font-size: .8rem; color: var(--ink-muted);
+  border-top: 1px solid #e4d9c2; border-bottom: 1px solid #e4d9c2;
+  padding: 10px 0; margin-bottom: 36px; display: flex; flex-wrap: wrap; gap: 6px 24px;
+}
+.placeholder {
+  border: 1.5px dashed #d6c7a8; background: #fffdf6; border-radius: 6px;
+  padding: 28px; color: var(--ink-muted); font-style: italic;
+}
+
+/* About */
+.about-grid { display: grid; grid-template-columns: 220px 1fr; gap: 36px; align-items: start; }
+.photo { width: 220px; aspect-ratio: 1 / 1; object-fit: cover; display: block; background: #e9dcc0; padding: 10px 10px 34px; transform: rotate(-2deg); box-shadow: 0 10px 22px rgba(0,0,0,.25); }
+
+/* Previous / next "chapter" links */
+.pager { display: flex; justify-content: space-between; gap: 16px; margin-top: 56px; padding-top: 22px; border-top: 1px solid #e4d9c2; font-family: "Inter", sans-serif; font-size: .85rem; }
+.pager a { text-decoration: none; color: var(--ink); }
+.pager a small { display: block; color: var(--ink-muted); font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; }
+.pager a b { font-family: "DM Serif Display", serif; font-weight: 400; font-size: 1.15rem; }
+.pager a:hover b { color: #8f2a25; }
+.pager .next { text-align: right; margin-left: auto; }
+
+/* ---------- Footer ---------- */
+footer { text-align: center; color: #8c7a5c; font-size: .78rem; padding: 0 24px 34px; position: relative; z-index: 2; letter-spacing: .04em; }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 760px) {
+  .header-inner { padding: 18px 22px; }
+  .menu-toggle { display: block; }
+  nav { width: 100%; display: none; }
+  nav.open { display: block; }
+  nav ul { flex-direction: column; gap: 4px; }
+  nav a { display: block; padding: 8px 0; }
+  .shelf { padding: 0 14px; margin-top: 30px; }
+  .books { gap: 5px; height: 300px; padding: 0 6px; }
+  .book { width: 52px; padding: 12px 0; }
+  .book::before { top: 28px; } .book::after { bottom: 38px; }
+  .book .ti { font-size: 1rem; }
+  .book .au { font-size: .5rem; letter-spacing: .1em; }
+  .b1 { height: 225px; } .b2 { height: 285px; width: 62px; } .b3 { height: 248px; }
+  .b4 { height: 218px; width: 48px; } .b5 { height: 262px; }
+  .lean { margin-left: 8px; }
+  .ribbon { right: 8px; width: 12px; height: 34px; }
+  .framed { display: none; }
+  .page { padding: 44px 26px 50px; font-size: 17px; }
+  .page::before { right: 24px; }
+  .about-grid { grid-template-columns: 1fr; }
+  .photo { width: 190px; }
+}
